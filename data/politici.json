@@ -1,5 +1,5 @@
 [
-    55,
+    56,
     {
         "nome": "Giorgia Meloni",
         "partito": "Fratelli d'Italia",
@@ -51,14 +51,14 @@
     },
     {
         "nome": "Nicola Fratoianni",
-        "partito": "Sinistra Italiana (AVS)",
+        "partito": "Alleanza Verdi e Sinistra",
         "ruolo": "Deputato",
         "funzione": "Segretario Nazionale",
         "orientamento": "sinistra"
     },
     {
         "nome": "Angelo Bonelli",
-        "partito": "Europa Verde (AVS)",
+        "partito": "Alleanza Verdi e Sinistra",
         "ruolo": "Deputato",
         "funzione": "Co-portavoce Nazionale",
         "orientamento": "sinistra"
@@ -384,5 +384,12 @@
         "ruolo": "Deputato",
         "funzione": "Dirigente Nazionale",
         "orientamento": "centro-sinistra"
+    },
+    {
+        "nome": "Ettore Rosato",
+        "partito": "Azione",
+        "ruolo": "Deputato",
+        "funzione": "Vicesegretario",
+        "orientamento": "centro"
     }
 ]
