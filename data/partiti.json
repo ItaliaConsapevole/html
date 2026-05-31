@@ -1,5 +1,5 @@
 [
-    12,
+    13,
     {
         "coalizione": "Destra",
         "orientamento": "Destra / Conservatorismo nazionale",
@@ -95,5 +95,13 @@
         "partito": "Südtiroler Volkspartei",
         "affiliazione": "Partito Popolare Europeo (PPE)",
         "descrizione": "Partito storico che rappresenta gli interessi delle minoranze linguistiche tedesca e ladina nella provincia autonoma di Bolzano."
+    },
+    {
+        "coalizione": "Indipendente",
+        "orientamento": "Destra",
+        "leader": "Roberto Vannacci",
+        "partito": "Futuro Nazionale",
+        "affiliazione": "Nessuna",
+        "descrizione": ""
     }
 ]
