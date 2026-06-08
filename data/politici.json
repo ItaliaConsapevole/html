@@ -23,7 +23,7 @@
     },
     {
         "nome": "Matteo Salvini",
-        "partito": "Lega per Salvini Premier",
+        "partito": "Lega",
         "ruolo": "Vicepresidente del Consiglio e Ministro delle Infrastrutture",
         "funzione": "Segretario Federale",
         "orientamento": "destra"
@@ -72,7 +72,7 @@
     },
     {
         "nome": "Lorenzo Fontana",
-        "partito": "Lega per Salvini Premier",
+        "partito": "Lega",
         "ruolo": "Presidente della Camera dei Deputati",
         "funzione": "Vicesegretario Federale",
         "orientamento": "destra"
@@ -254,35 +254,35 @@
     },
     {
         "nome": "Massimiliano Fedriga",
-        "partito": "Lega per Salvini Premier",
+        "partito": "Lega",
         "ruolo": "Presidente della Regione Friuli-Venezia Giulia",
         "funzione": "Dirigente Federale",
         "orientamento": "destra"
     },
     {
         "nome": "Luca Zaia",
-        "partito": "Lega per Salvini Premier",
+        "partito": "Lega",
         "ruolo": "Presidente della Regione Veneto",
         "funzione": "Dirigente Federale",
         "orientamento": "centro-destra"
     },
     {
         "nome": "Attilio Fontana",
-        "partito": "Lega per Salvini Premier",
+        "partito": "Lega",
         "ruolo": "Presidente della Regione Lombardia",
         "funzione": "Dirigente Federale",
         "orientamento": "destra"
     },
     {
         "nome": "Riccardo Molinari",
-        "partito": "Lega per Salvini Premier",
+        "partito": "Lega",
         "ruolo": "Deputato",
         "funzione": "Capogruppo alla Camera dei Deputati",
         "orientamento": "destra"
     },
     {
         "nome": "Massimiliano Romeo",
-        "partito": "Lega per Salvini Premier",
+        "partito": "Lega",
         "ruolo": "Senatore",
         "funzione": "Capogruppo al Senato della Repubblica",
         "orientamento": "destra"
