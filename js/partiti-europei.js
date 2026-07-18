@@ -14,19 +14,19 @@ function slug(value) {
 }
 
 function updateSummary(count) {
-  const texts = getPageTexts('partitiEuropei');
+  const texts = getPageTexts('partitiEuropei') || {};
   if (summary) {
     summary.textContent = resolveText(texts.summary || '{count} partiti europei disponibili', { count });
   }
 }
 
 function renderPartitiEuropei(data) {
-  const texts = getPageTexts('partitiEuropei');
+  const texts = getPageTexts('partitiEuropei') || {};
   const entries = Array.isArray(data) ? data.slice(1) : [];
   updateSummary(entries.length);
 
   if (!entries.length) {
-    content.innerHTML = '';
+    if (content) content.innerHTML = '';
     return;
   }
 
@@ -35,6 +35,17 @@ function renderPartitiEuropei(data) {
     const colorStyle = color ? `style="--party-color:${color};"` : '';
     const logoStyle = color ? `style="border:2px solid ${color};"` : '';
     const logoSrc = item.logo || '';
+    
+    // CORRETTO: Gestione del percorso del logo per uscire dalla cartella html/
+    let correctLogoSrc = logoSrc;
+    if (logoSrc && !logoSrc.startsWith('http') && !logoSrc.startsWith('../')) {
+        if (!logoSrc.includes('img/partiti/')) {
+            correctLogoSrc = `../img/partiti/${logoSrc}`;
+        } else {
+            correctLogoSrc = `../${logoSrc}`;
+        }
+    }
+
     const partitiNazionali = Array.isArray(item.partiti_nazionali) ? item.partiti_nazionali : [];
     const gruppiPerStato = partitiNazionali.reduce((acc, entry) => {
       const stato = entry.stato || texts.defaultState || 'Altro';
@@ -42,12 +53,15 @@ function renderPartitiEuropei(data) {
       acc[stato].push(entry.partito);
       return acc;
     }, {});
+    
     const partitiNazionaliMarkup = Object.entries(gruppiPerStato)
       .map(([stato, partiti]) => {
+        // I link mantengono la rotta corretta poiché partiti.html condivide la stessa cartella
         const links = partiti.map(partito => `<a class="party-link" href="partiti.html#${slug(partito)}">${partito}</a>`).join(', ');
         return `<li><strong>${stato}:</strong> ${links}</li>`;
       })
       .join('');
+      
     return `
       <article class="source-card party-card" id="${slug(item.partito)}" ${colorStyle}>
         <div class="card-header">
@@ -56,7 +70,7 @@ function renderPartitiEuropei(data) {
             <div class="party-label">${item.gruppo || texts.defaultGroup || 'Gruppo europeo'} · ${item.orientamento || texts.defaultOrientation || 'Orientamento non specificato'}</div>
           </div>
           <div class="badges">
-            <img class="party-logo" src="${logoSrc}" alt="Logo ${item.partito}" ${logoStyle}>
+            <img class="party-logo" src="${correctLogoSrc}" alt="Logo ${item.partito}" ${logoStyle}>
           </div>
         </div>
         ${item.descrizione || texts.descriptionFallback ? `<p class="descrizione">${item.descrizione || texts.descriptionFallback}</p>` : ''}
@@ -64,25 +78,37 @@ function renderPartitiEuropei(data) {
       </article>`;
   }).join('');
 
-  content.innerHTML = html;
+  if (content) {
+    content.innerHTML = html;
+  }
+  
   if (typeof window.highlightHashTarget === 'function') {
     window.highlightHashTarget();
   }
 }
 
 function loadData() {
-  const texts = getPageTexts('partitiEuropei');
+  const texts = getPageTexts('partitiEuropei') || {};
+  let jsonData = null;
+
+  // Prima chiamata: tenta il recupero da GitHub
   fetch('https://raw.githubusercontent.com/ItaliaConsapevole/html/main/data/partiti-europei.json')
     .then(response => response.ok ? response.json() : Promise.reject())
+    // Fallback: se GitHub fallisce, prova a caricare il file locale corretto
+    .catch(() => fetch('../data/partiti-europei.json').then(response => response.ok ? response.json() : Promise.reject()))
     .then(data => {
+      jsonData = data; // Salva i dati validi ottenuti ed evita il double-fetch
       return window.__PROJECT_TEXTS_PROMISE__ || Promise.resolve().then(() => window.__PROJECT_TEXTS__);
     })
     .then(() => {
-      return fetch('https://raw.githubusercontent.com/ItaliaConsapevole/html/main/data/partiti-europei.json')
-        .then(response => response.ok ? response.json() : Promise.reject());
+      if (jsonData) {
+        renderPartitiEuropei(jsonData);
+      } else {
+        throw new Error("Nessun dato disponibile");
+      }
     })
-    .then(renderPartitiEuropei)
-    .catch(() => {
+    .catch((err) => {
+      console.error("Errore nel flusso di caricamento:", err);
       if (pageTitle) pageTitle.textContent = texts.pageTitle || 'Partiti europei';
       if (pageDescription) pageDescription.textContent = texts.pageDescription || 'Panoramica dei principali partiti e gruppi politici europei.';
       if (content) {

@@ -9,7 +9,7 @@ const defaultPersonPhoto = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2
 function loadRemoteJSON(filename) {
     return fetch(url + filename)
         .then(response => response.ok ? response.json() : Promise.reject())
-        .catch(() => fetch(`data/${filename}`)
+        .catch(() => fetch(`../data/${filename}`)
             .then(response => response.ok ? response.json() : Promise.reject())
             .catch(() => ({}))
         );
