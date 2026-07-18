@@ -2,8 +2,7 @@ let politici = [];
 let dichiarazioni = [];
 let partitoAffiliazioni = {};
 let partitoCoalizioni = {};
-let imagesByParty = {};
-let imagesByPolitician = {};
+let partyMetaByName = {};
 const url = "https://raw.githubusercontent.com/ItaliaConsapevole/html/main/data/";
 const defaultPersonPhoto = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="140" height="140"%3E%3Crect width="140" height="140" fill="%23f8f9ff"/%3E%3Ccircle cx="70" cy="45" r="32" fill="%23cbd2e6"/%3E%3Crect x="30" y="86" width="80" height="32" rx="16" fill="%23cbd2e6"/%3E%3C/svg%3E';
 
@@ -18,6 +17,14 @@ function loadRemoteJSON(filename) {
 
 function normalizeString(value) {
     return value.toString().toLowerCase().trim().replace(/\s+/g, ' ');
+}
+
+function getPartyMeta(name) {
+    const normalized = normalizeString(name);
+    if (!normalized) return {};
+    if (partyMetaByName[normalized]) return partyMetaByName[normalized];
+    const match = Object.keys(partyMetaByName).find(key => normalized.includes(key) || key.includes(normalized));
+    return match ? partyMetaByName[match] : {};
 }
 
 function readableTextColor(hex) {
@@ -48,23 +55,26 @@ function getCoalitionForParty(name) {
 Promise.all([
     loadRemoteJSON("politici.json"),
     loadRemoteJSON("index.json"),
-    loadRemoteJSON("partiti.json"),
-    loadRemoteJSON("images.json")
+    loadRemoteJSON("partiti.json")
 ])
-    .then(([politiciData, dichiarazioniData, partitiData, imagesData]) => {
+    .then(([politiciData, dichiarazioniData, partitiData]) => {
         politici = politiciData;
         dichiarazioni = dichiarazioniData;
         const partitiEntries = Array.isArray(partitiData) ? partitiData.slice(1) : [];
         partitoAffiliazioni = {};
         partitoCoalizioni = {};
+        partyMetaByName = {};
         partitiEntries.forEach(item => {
             const normalized = normalizeString(item.partito || '');
             partitoAffiliazioni[normalized] = item.affiliazione || '';
             partitoCoalizioni[normalized] = item.coalizione || 'Indipendente';
+            if (normalized) {
+                partyMetaByName[normalized] = {
+                    logo: item.logo || '',
+                    color: item.color || ''
+                };
+            }
         });
-
-        imagesByParty = (imagesData && imagesData.parties) || {};
-        imagesByPolitician = (imagesData && imagesData.politicians) || {};
 
         renderPolitici();
         const filterInput = document.getElementById('politici-filter');
@@ -154,12 +164,9 @@ function renderPolitici(filterValue = '') {
                 : '<li>Nessuna dichiarazione disponibile.</li>';
             const affiliation = getAffiliationForParty(politico.partito || '');
             const coalition = getCoalitionForParty(politico.partito || '');
-                // try to find the best matching party image key (partial match)
-                const partyKey = Object.keys(imagesByParty || {}).find(k => normalizeString(politico.partito || '').includes(k) || k.includes(normalizeString(politico.partito || '')));
-                const partyImage = (partyKey && imagesByParty[partyKey]) || imagesByParty[normalizeString(politico.partito || '')] || {};
-                const personImage = imagesByPolitician[normalizeString(politico.nome || '')] || {};
-                const photoSrc = (personImage && personImage.photo) || (partyImage && partyImage.logo) || defaultPersonPhoto;
-                const partyColor = partyImage.color || '';
+                const partyMeta = getPartyMeta(politico.partito || '');
+                const photoSrc = politico.photo || partyMeta.logo || defaultPersonPhoto;
+                const partyColor = partyMeta.color || '';
                 const badgeTextColor = partyColor ? readableTextColor(partyColor) : '';
                 const photoStyle = partyColor ? `style="border:2px solid ${partyColor};"` : '';
                 const badgeStyle = partyColor ? `style="background:${partyColor}; color:${badgeTextColor};"` : '';

@@ -1,395 +1,423 @@
 [
-    56,
-    {
-        "nome": "Giorgia Meloni",
-        "partito": "Fratelli d'Italia",
-        "ruolo": "Presidente del Consiglio dei Ministri",
-        "funzione": "Presidente Nazionale",
-        "orientamento": "destra"
-    },
-    {
-        "nome": "Elly Schlein",
-        "partito": "Partito Democratico",
-        "ruolo": "Deputata",
-        "funzione": "Segretaria Nazionale",
-        "orientamento": "sinistra"
-    },
-    {
-        "nome": "Giuseppe Conte",
-        "partito": "Movimento 5 Stelle",
-        "ruolo": "Deputato",
-        "funzione": "Presidente",
-        "orientamento": "centro-sinistra"
-    },
-    {
-        "nome": "Matteo Salvini",
-        "partito": "Lega",
-        "ruolo": "Vicepresidente del Consiglio e Ministro delle Infrastrutture",
-        "funzione": "Segretario Federale",
-        "orientamento": "destra"
-    },
-    {
-        "nome": "Antonio Tajani",
-        "partito": "Forza Italia",
-        "ruolo": "Vicepresidente del Consiglio e Ministro degli Esteri",
-        "funzione": "Segretario Nazionale",
-        "orientamento": "centro-destra"
-    },
-    {
-        "nome": "Carlo Calenda",
-        "partito": "Azione",
-        "ruolo": "Senatore",
-        "funzione": "Segretario Nazionale",
-        "orientamento": "centro"
-    },
-    {
-        "nome": "Matteo Renzi",
-        "partito": "Italia Viva",
-        "ruolo": "Senatore",
-        "funzione": "Presidente Nazionale",
-        "orientamento": "centro"
-    },
-    {
-        "nome": "Nicola Fratoianni",
-        "partito": "Alleanza Verdi e Sinistra",
-        "ruolo": "Deputato",
-        "funzione": "Segretario Nazionale",
-        "orientamento": "sinistra"
-    },
-    {
-        "nome": "Angelo Bonelli",
-        "partito": "Alleanza Verdi e Sinistra",
-        "ruolo": "Deputato",
-        "funzione": "Co-portavoce Nazionale",
-        "orientamento": "sinistra"
-    },
-    {
-        "nome": "Ignazio La Russa",
-        "partito": "Fratelli d'Italia",
-        "ruolo": "Presidente del Senato della Repubblica",
-        "funzione": "Dirigente Nazionale",
-        "orientamento": "destra"
-    },
-    {
-        "nome": "Lorenzo Fontana",
-        "partito": "Lega",
-        "ruolo": "Presidente della Camera dei Deputati",
-        "funzione": "Vicesegretario Federale",
-        "orientamento": "destra"
-    },
-    {
-        "nome": "Giancarlo Giorgetti",
-        "partito": "Lega per Salvini Premier",
-        "ruolo": "Ministro dell'Economia e delle Finanze",
-        "funzione": "Vicesegretario Federale",
-        "orientamento": "destra"
-    },
-    {
-        "nome": "Guido Crosetto",
-        "partito": "Fratelli d'Italia",
-        "ruolo": "Ministro della Difesa",
-        "funzione": "Cofondatore e Dirigente",
-        "orientamento": "destra"
-    },
-    {
-        "nome": "Francesco Lollobrigida",
-        "partito": "Fratelli d'Italia",
-        "ruolo": "Ministro dell'Agricoltura e della Sovranità Alimentare",
-        "funzione": "Dirigente Nazionale",
-        "orientamento": "destra"
-    },
-    {
-        "nome": "Carlo Fidanza",
-        "partito": "Fratelli d'Italia",
-        "ruolo": "Eurodeputato",
-        "funzione": "Capodelegazione al Parlamento Europeo",
-        "orientamento": "destra"
-    },
-    {
-        "nome": "Giovanni Donzelli",
-        "partito": "Fratelli d'Italia",
-        "ruolo": "Deputato",
-        "funzione": "Responsabile Nazionale Organizzazione",
-        "orientamento": "destra"
-    },
-    {
-        "nome": "Giovanbattista Fazzolari",
-        "partito": "Fratelli d'Italia",
-        "ruolo": "Sottosegretario di Stato alla Presidenza del Consiglio",
-        "funzione": "Responsabile Attuazione Programma",
-        "orientamento": "destra"
-    },
-    {
-        "nome": "Daniela Santanchè",
-        "partito": "Fratelli d'Italia",
-        "ruolo": "Ministra del Turismo",
-        "funzione": "Dirigente Nazionale",
-        "orientamento": "destra"
-    },
-    {
-        "nome": "Marco Marsilio",
-        "partito": "Fratelli d'Italia",
-        "ruolo": "Presidente della Regione Abruzzo",
-        "funzione": "Dirigente",
-        "orientamento": "destra"
-    },
-    {
-        "nome": "Tommaso Foti",
-        "partito": "Fratelli d'Italia",
-        "ruolo": "Deputato",
-        "funzione": "Capogruppo alla Camera dei Deputati",
-        "orientamento": "destra"
-    },
-    {
-        "nome": "Stefano Bonaccini",
-        "partito": "Partito Democratico",
-        "ruolo": "Eurodeputato",
-        "funzione": "Presidente Nazionale",
-        "orientamento": "centro-sinistra"
-    },
-    {
-        "nome": "Francesco Boccia",
-        "partito": "Partito Democratico",
-        "ruolo": "Senatore",
-        "funzione": "Capogruppo al Senato della Repubblica",
-        "orientamento": "centro-sinistra"
-    },
-    {
-        "nome": "Chiara Braga",
-        "partito": "Partito Democratico",
-        "ruolo": "Deputata",
-        "funzione": "Capogruppo alla Camera dei Deputati",
-        "orientamento": "centro-sinistra"
-    },
-    {
-        "nome": "Dario Nardella",
-        "partito": "Partito Democratico",
-        "ruolo": "Eurodeputato",
-        "funzione": "Dirigente Nazionale",
-        "orientamento": "centro-sinistra"
-    },
-    {
-        "nome": "Roberto Gualtieri",
-        "partito": "Partito Democratico",
-        "ruolo": "Sindaco di Roma",
-        "funzione": "Dirigente",
-        "orientamento": "centro-sinistra"
-    },
-    {
-        "nome": "Vincenzo De Luca",
-        "partito": "Partito Democratico",
-        "ruolo": "Presidente della Regione Campania",
-        "funzione": "Esponente",
-        "orientamento": "centro-sinistra"
-    },
-    {
-        "nome": "Michele Emiliano",
-        "partito": "Partito Democratico",
-        "ruolo": "Presidente della Regione Puglia",
-        "funzione": "Esponente",
-        "orientamento": "centro-sinistra"
-    },
-    {
-        "nome": "Peppe Provenzano",
-        "partito": "Partito Democratico",
-        "ruolo": "Deputato",
-        "funzione": "Responsabile Esteri nella Segreteria Nazionale",
-        "orientamento": "centro-sinistra"
-    },
-    {
-        "nome": "Lorenzo Guerini",
-        "partito": "Partito Democratico",
-        "ruolo": "Deputato (Presidente del COPASIR)",
-        "funzione": "Dirigente (Presidente della corrente Riformista)",
-        "orientamento": "centro-sinistra"
-    },
-    {
-        "nome": "Chiara Appendino",
-        "partito": "Movimento 5 Stelle",
-        "ruolo": "Deputata",
-        "funzione": "Vicepresidente",
-        "orientamento": "centro-sinistra"
-    },
-    {
-        "nome": "Riccardo Ricciardi",
-        "partito": "Movimento 5 Stelle",
-        "ruolo": "Deputato",
-        "funzione": "Vicepresidente",
-        "orientamento": "centro-sinistra"
-    },
-    {
-        "nome": "Alessandra Todde",
-        "partito": "Movimento 5 Stelle",
-        "ruolo": "Presidente della Regione Sardegna",
-        "funzione": "Esponente",
-        "orientamento": "centro-sinistra"
-    },
-    {
-        "nome": "Stefano Patuanelli",
-        "partito": "Movimento 5 Stelle",
-        "ruolo": "Senatore",
-        "funzione": "Capogruppo al Senato della Repubblica",
-        "orientamento": "centro-sinistra"
-    },
-    {
-        "nome": "Francesco Silvestri",
-        "partito": "Movimento 5 Stelle",
-        "ruolo": "Deputato",
-        "funzione": "Capogruppo alla Camera dei Deputati",
-        "orientamento": "centro-sinistra"
-    },
-    {
-        "nome": "Pasquale Tridico",
-        "partito": "Movimento 5 Stelle",
-        "ruolo": "Eurodeputato",
-        "funzione": "Capodelegazione al Parlamento Europeo",
-        "orientamento": "centro-sinistra"
-    },
-    {
-        "nome": "Barbara Floridia",
-        "partito": "Movimento 5 Stelle",
-        "ruolo": "Senatrice (Presidente Commissione Vigilanza Rai)",
-        "funzione": "Esponente",
-        "orientamento": "centro-sinistra"
-    },
-    {
-        "nome": "Massimiliano Fedriga",
-        "partito": "Lega",
-        "ruolo": "Presidente della Regione Friuli-Venezia Giulia",
-        "funzione": "Dirigente Federale",
-        "orientamento": "destra"
-    },
-    {
-        "nome": "Luca Zaia",
-        "partito": "Lega",
-        "ruolo": "Presidente della Regione Veneto",
-        "funzione": "Dirigente Federale",
-        "orientamento": "centro-destra"
-    },
-    {
-        "nome": "Attilio Fontana",
-        "partito": "Lega",
-        "ruolo": "Presidente della Regione Lombardia",
-        "funzione": "Dirigente Federale",
-        "orientamento": "destra"
-    },
-    {
-        "nome": "Riccardo Molinari",
-        "partito": "Lega",
-        "ruolo": "Deputato",
-        "funzione": "Capogruppo alla Camera dei Deputati",
-        "orientamento": "destra"
-    },
-    {
-        "nome": "Massimiliano Romeo",
-        "partito": "Lega",
-        "ruolo": "Senatore",
-        "funzione": "Capogruppo al Senato della Repubblica",
-        "orientamento": "destra"
-    },
-    {
-        "nome": "Licia Ronzulli",
-        "partito": "Forza Italia",
-        "ruolo": "Senatrice (Vicepresidente del Senato)",
-        "funzione": "Dirigente",
-        "orientamento": "centro-destra"
-    },
-    {
-        "nome": "Paolo Barelli",
-        "partito": "Forza Italia",
-        "ruolo": "Deputato",
-        "funzione": "Capogruppo alla Camera dei Deputati",
-        "orientamento": "centro-destra"
-    },
-    {
-        "nome": "Maurizio Gasparri",
-        "partito": "Forza Italia",
-        "ruolo": "Senatore",
-        "funzione": "Capogruppo al Senato della Repubblica",
-        "orientamento": "centro-destra"
-    },
-    {
-        "nome": "Roberto Occhiuto",
-        "partito": "Forza Italia",
-        "ruolo": "Presidente della Regione Calabria",
-        "funzione": "Vicesegretario Nazionale",
-        "orientamento": "centro-destra"
-    },
-    {
-        "nome": "Alberto Cirio",
-        "partito": "Forza Italia",
-        "ruolo": "Presidente della Regione Piemonte",
-        "funzione": "Vicesegretario Nazionale",
-        "orientamento": "centro-destra"
-    },
-    {
-        "nome": "Renato Schifani",
-        "partito": "Forza Italia",
-        "ruolo": "Presidente della Regione Siciliana",
-        "funzione": "Membro del Consiglio Nazionale",
-        "orientamento": "centro-destra"
-    },
-    {
-        "nome": "Ilaria Salis",
-        "partito": "Alleanza Verdi e Sinistra",
-        "ruolo": "Eurodeputata",
-        "funzione": "Esponente",
-        "orientamento": "sinistra"
-    },
-    {
-        "nome": "Mimmo Lucano",
-        "partito": "Alleanza Verdi e Sinistra",
-        "ruolo": "Eurodeputato",
-        "funzione": "Esponente",
-        "orientamento": "sinistra"
-    },
-    {
-        "nome": "Matteo Richetti",
-        "partito": "Azione",
-        "ruolo": "Deputato",
-        "funzione": "Presidente Nazionale",
-        "orientamento": "centro"
-    },
-    {
-        "nome": "Elena Bonetti",
-        "partito": "Azione",
-        "ruolo": "Deputata",
-        "funzione": "Vicepresidente",
-        "orientamento": "centro"
-    },
-    {
-        "nome": "Maria Elena Boschi",
-        "partito": "Italia Viva",
-        "ruolo": "Deputata",
-        "funzione": "Vicepresidente Nazionale",
-        "orientamento": "centro"
-    },
-    {
-        "nome": "Raffaella Paita",
-        "partito": "Italia Viva",
-        "ruolo": "Senatrice",
-        "funzione": "Coordinatrice Nazionale",
-        "orientamento": "centro"
-    },
-    {
-        "nome": "Maurizio Lupi",
-        "partito": "Noi Moderati",
-        "ruolo": "Deputato",
-        "funzione": "Presidente",
-        "orientamento": "centro-destra"
-    },
-    {
-        "nome": "Benedetto Della Vedova",
-        "partito": "+Europa",
-        "ruolo": "Deputato",
-        "funzione": "Dirigente Nazionale",
-        "orientamento": "centro-sinistra"
-    },
-    {
-        "nome": "Ettore Rosato",
-        "partito": "Azione",
-        "ruolo": "Deputato",
-        "funzione": "Vicesegretario",
-        "orientamento": "centro"
-    }
+  56,
+  {
+    "nome": "Giorgia Meloni",
+    "partito": "Fratelli d'Italia",
+    "ruolo": "Presidente del Consiglio dei Ministri",
+    "funzione": "Presidente Nazionale",
+    "orientamento": "destra",
+    "photo": "img/politici/Giorgia_Meloni.jpg"
+  },
+  {
+    "nome": "Elly Schlein",
+    "partito": "Partito Democratico",
+    "ruolo": "Deputata",
+    "funzione": "Segretaria Nazionale",
+    "orientamento": "sinistra",
+    "photo": "img/politici/Elly_Schlein.jpg"
+  },
+  {
+    "nome": "Giuseppe Conte",
+    "partito": "Movimento 5 Stelle",
+    "ruolo": "Deputato",
+    "funzione": "Presidente",
+    "orientamento": "centro-sinistra",
+    "photo": "img/politici/Giuseppe_Conte.jpg"
+  },
+  {
+    "nome": "Matteo Salvini",
+    "partito": "Lega",
+    "ruolo": "Vicepresidente del Consiglio e Ministro delle Infrastrutture",
+    "funzione": "Segretario Federale",
+    "orientamento": "destra",
+    "photo": "img/politici/Matteo_Salvini.jpg"
+  },
+  {
+    "nome": "Antonio Tajani",
+    "partito": "Forza Italia",
+    "ruolo": "Vicepresidente del Consiglio e Ministro degli Esteri",
+    "funzione": "Segretario Nazionale",
+    "orientamento": "centro-destra",
+    "photo": "img/politici/Antonio_Tajani.jpg"
+  },
+  {
+    "nome": "Carlo Calenda",
+    "partito": "Azione",
+    "ruolo": "Senatore",
+    "funzione": "Segretario Nazionale",
+    "orientamento": "centro",
+    "photo": "img/politici/Carlo_Calenda.jpg"
+  },
+  {
+    "nome": "Matteo Renzi",
+    "partito": "Italia Viva",
+    "ruolo": "Senatore",
+    "funzione": "Presidente Nazionale",
+    "orientamento": "centro",
+    "photo": "img/politici/Matteo_Renzi.jpeg"
+  },
+  {
+    "nome": "Nicola Fratoianni",
+    "partito": "Alleanza Verdi e Sinistra",
+    "ruolo": "Deputato",
+    "funzione": "Segretario Nazionale",
+    "orientamento": "sinistra",
+    "photo": "img/politici/Nicola_Fratoianni.jpg"
+  },
+  {
+    "nome": "Angelo Bonelli",
+    "partito": "Alleanza Verdi e Sinistra",
+    "ruolo": "Deputato",
+    "funzione": "Co-portavoce Nazionale",
+    "orientamento": "sinistra",
+    "photo": "img/politici/Angelo_Bonelli.jpg"
+  },
+  {
+    "nome": "Ignazio La Russa",
+    "partito": "Fratelli d'Italia",
+    "ruolo": "Presidente del Senato della Repubblica",
+    "funzione": "Dirigente Nazionale",
+    "orientamento": "destra",
+    "photo": "img/politici/Ignazio_La_Russa.jpg"
+  },
+  {
+    "nome": "Lorenzo Fontana",
+    "partito": "Lega",
+    "ruolo": "Presidente della Camera dei Deputati",
+    "funzione": "Vicesegretario Federale",
+    "orientamento": "destra",
+    "photo": "img/politici/Lorenzo_Fontana.jpg"
+  },
+  {
+    "nome": "Giancarlo Giorgetti",
+    "partito": "Lega per Salvini Premier",
+    "ruolo": "Ministro dell'Economia e delle Finanze",
+    "funzione": "Vicesegretario Federale",
+    "orientamento": "destra",
+    "photo": "img/politici/Giancarlo_Giorgetti.jpg"
+  },
+  {
+    "nome": "Guido Crosetto",
+    "partito": "Fratelli d'Italia",
+    "ruolo": "Ministro della Difesa",
+    "funzione": "Cofondatore e Dirigente",
+    "orientamento": "destra",
+    "photo": "img/politici/Guido_Crosetto.jpg"
+  },
+  {
+    "nome": "Francesco Lollobrigida",
+    "partito": "Fratelli d'Italia",
+    "ruolo": "Ministro dell'Agricoltura e della Sovranità Alimentare",
+    "funzione": "Dirigente Nazionale",
+    "orientamento": "destra",
+    "photo": "img/politici/Francesco_Lollobrigida.png"
+  },
+  {
+    "nome": "Carlo Fidanza",
+    "partito": "Fratelli d'Italia",
+    "ruolo": "Eurodeputato",
+    "funzione": "Capodelegazione al Parlamento Europeo",
+    "orientamento": "destra",
+    "photo": "img/politici/Carlo_Fidanza.jpg"
+  },
+  {
+    "nome": "Giovanni Donzelli",
+    "partito": "Fratelli d'Italia",
+    "ruolo": "Deputato",
+    "funzione": "Responsabile Nazionale Organizzazione",
+    "orientamento": "destra",
+    "photo": "img/politici/Giovanni_Donzelli.jpg"
+  },
+  {
+    "nome": "Giovanbattista Fazzolari",
+    "partito": "Fratelli d'Italia",
+    "ruolo": "Sottosegretario di Stato alla Presidenza del Consiglio",
+    "funzione": "Responsabile Attuazione Programma",
+    "orientamento": "destra",
+    "photo": "img/politici/Giovanbattista_Fazzolari.jpg"
+  },
+  {
+    "nome": "Daniela Santanchè",
+    "partito": "Fratelli d'Italia",
+    "ruolo": "Ministra del Turismo",
+    "funzione": "Dirigente Nazionale",
+    "orientamento": "destra"
+  },
+  {
+    "nome": "Marco Marsilio",
+    "partito": "Fratelli d'Italia",
+    "ruolo": "Presidente della Regione Abruzzo",
+    "funzione": "Dirigente",
+    "orientamento": "destra",
+    "photo": "img/politici/Marco_Marsilio.jpg"
+  },
+  {
+    "nome": "Tommaso Foti",
+    "partito": "Fratelli d'Italia",
+    "ruolo": "Deputato",
+    "funzione": "Capogruppo alla Camera dei Deputati",
+    "orientamento": "destra"
+  },
+  {
+    "nome": "Stefano Bonaccini",
+    "partito": "Partito Democratico",
+    "ruolo": "Eurodeputato",
+    "funzione": "Presidente Nazionale",
+    "orientamento": "centro-sinistra"
+  },
+  {
+    "nome": "Francesco Boccia",
+    "partito": "Partito Democratico",
+    "ruolo": "Senatore",
+    "funzione": "Capogruppo al Senato della Repubblica",
+    "orientamento": "centro-sinistra"
+  },
+  {
+    "nome": "Chiara Braga",
+    "partito": "Partito Democratico",
+    "ruolo": "Deputata",
+    "funzione": "Capogruppo alla Camera dei Deputati",
+    "orientamento": "centro-sinistra"
+  },
+  {
+    "nome": "Dario Nardella",
+    "partito": "Partito Democratico",
+    "ruolo": "Eurodeputato",
+    "funzione": "Dirigente Nazionale",
+    "orientamento": "centro-sinistra"
+  },
+  {
+    "nome": "Roberto Gualtieri",
+    "partito": "Partito Democratico",
+    "ruolo": "Sindaco di Roma",
+    "funzione": "Dirigente",
+    "orientamento": "centro-sinistra"
+  },
+  {
+    "nome": "Vincenzo De Luca",
+    "partito": "Partito Democratico",
+    "ruolo": "Presidente della Regione Campania",
+    "funzione": "Esponente",
+    "orientamento": "centro-sinistra"
+  },
+  {
+    "nome": "Michele Emiliano",
+    "partito": "Partito Democratico",
+    "ruolo": "Presidente della Regione Puglia",
+    "funzione": "Esponente",
+    "orientamento": "centro-sinistra"
+  },
+  {
+    "nome": "Peppe Provenzano",
+    "partito": "Partito Democratico",
+    "ruolo": "Deputato",
+    "funzione": "Responsabile Esteri nella Segreteria Nazionale",
+    "orientamento": "centro-sinistra"
+  },
+  {
+    "nome": "Lorenzo Guerini",
+    "partito": "Partito Democratico",
+    "ruolo": "Deputato (Presidente del COPASIR)",
+    "funzione": "Dirigente (Presidente della corrente Riformista)",
+    "orientamento": "centro-sinistra"
+  },
+  {
+    "nome": "Chiara Appendino",
+    "partito": "Movimento 5 Stelle",
+    "ruolo": "Deputata",
+    "funzione": "Vicepresidente",
+    "orientamento": "centro-sinistra"
+  },
+  {
+    "nome": "Riccardo Ricciardi",
+    "partito": "Movimento 5 Stelle",
+    "ruolo": "Deputato",
+    "funzione": "Vicepresidente",
+    "orientamento": "centro-sinistra"
+  },
+  {
+    "nome": "Alessandra Todde",
+    "partito": "Movimento 5 Stelle",
+    "ruolo": "Presidente della Regione Sardegna",
+    "funzione": "Esponente",
+    "orientamento": "centro-sinistra"
+  },
+  {
+    "nome": "Stefano Patuanelli",
+    "partito": "Movimento 5 Stelle",
+    "ruolo": "Senatore",
+    "funzione": "Capogruppo al Senato della Repubblica",
+    "orientamento": "centro-sinistra"
+  },
+  {
+    "nome": "Francesco Silvestri",
+    "partito": "Movimento 5 Stelle",
+    "ruolo": "Deputato",
+    "funzione": "Capogruppo alla Camera dei Deputati",
+    "orientamento": "centro-sinistra"
+  },
+  {
+    "nome": "Pasquale Tridico",
+    "partito": "Movimento 5 Stelle",
+    "ruolo": "Eurodeputato",
+    "funzione": "Capodelegazione al Parlamento Europeo",
+    "orientamento": "centro-sinistra"
+  },
+  {
+    "nome": "Barbara Floridia",
+    "partito": "Movimento 5 Stelle",
+    "ruolo": "Senatrice (Presidente Commissione Vigilanza Rai)",
+    "funzione": "Esponente",
+    "orientamento": "centro-sinistra"
+  },
+  {
+    "nome": "Massimiliano Fedriga",
+    "partito": "Lega",
+    "ruolo": "Presidente della Regione Friuli-Venezia Giulia",
+    "funzione": "Dirigente Federale",
+    "orientamento": "destra"
+  },
+  {
+    "nome": "Luca Zaia",
+    "partito": "Lega",
+    "ruolo": "Presidente della Regione Veneto",
+    "funzione": "Dirigente Federale",
+    "orientamento": "centro-destra"
+  },
+  {
+    "nome": "Attilio Fontana",
+    "partito": "Lega",
+    "ruolo": "Presidente della Regione Lombardia",
+    "funzione": "Dirigente Federale",
+    "orientamento": "destra"
+  },
+  {
+    "nome": "Riccardo Molinari",
+    "partito": "Lega",
+    "ruolo": "Deputato",
+    "funzione": "Capogruppo alla Camera dei Deputati",
+    "orientamento": "destra",
+    "photo": "img/politici/Riccardo_Molinari.jpg"
+  },
+  {
+    "nome": "Massimiliano Romeo",
+    "partito": "Lega",
+    "ruolo": "Senatore",
+    "funzione": "Capogruppo al Senato della Repubblica",
+    "orientamento": "destra",
+    "photo": "img/politici/Massimiliano_Romeo.jpg"
+  },
+  {
+    "nome": "Licia Ronzulli",
+    "partito": "Forza Italia",
+    "ruolo": "Senatrice (Vicepresidente del Senato)",
+    "funzione": "Dirigente",
+    "orientamento": "centro-destra",
+    "photo": "img/politici/Licia_Ronzulli.jpg"
+  },
+  {
+    "nome": "Paolo Barelli",
+    "partito": "Forza Italia",
+    "ruolo": "Deputato",
+    "funzione": "Capogruppo alla Camera dei Deputati",
+    "orientamento": "centro-destra",
+    "photo": "img/politici/Paolo_Barelli.jpg"
+  },
+  {
+    "nome": "Maurizio Gasparri",
+    "partito": "Forza Italia",
+    "ruolo": "Senatore",
+    "funzione": "Capogruppo al Senato della Repubblica",
+    "orientamento": "centro-destra",
+    "photo": "img/politici/Maurizio_Gasparri.jpg"
+  },
+  {
+    "nome": "Roberto Occhiuto",
+    "partito": "Forza Italia",
+    "ruolo": "Presidente della Regione Calabria",
+    "funzione": "Vicesegretario Nazionale",
+    "orientamento": "centro-destra",
+    "photo": "img/politici/Roberto_Occhiuto.png"
+  },
+  {
+    "nome": "Alberto Cirio",
+    "partito": "Forza Italia",
+    "ruolo": "Presidente della Regione Piemonte",
+    "funzione": "Vicesegretario Nazionale",
+    "orientamento": "centro-destra",
+    "photo": "img/politici/Alberto_Cirio.jpg"
+  },
+  {
+    "nome": "Renato Schifani",
+    "partito": "Forza Italia",
+    "ruolo": "Presidente della Regione Siciliana",
+    "funzione": "Membro del Consiglio Nazionale",
+    "orientamento": "centro-destra",
+    "photo": "img/politici/Renato_Schifani.jpg"
+  },
+  {
+    "nome": "Ilaria Salis",
+    "partito": "Alleanza Verdi e Sinistra",
+    "ruolo": "Eurodeputata",
+    "funzione": "Esponente",
+    "orientamento": "sinistra",
+    "photo": "img/politici/Ilaria_Salis.jpg"
+  },
+  {
+    "nome": "Mimmo Lucano",
+    "partito": "Alleanza Verdi e Sinistra",
+    "ruolo": "Eurodeputato",
+    "funzione": "Esponente",
+    "orientamento": "sinistra",
+    "photo": "img/politici/Mimmo_Lucano.jpg"
+  },
+  {
+    "nome": "Matteo Richetti",
+    "partito": "Azione",
+    "ruolo": "Deputato",
+    "funzione": "Presidente Nazionale",
+    "orientamento": "centro"
+  },
+  {
+    "nome": "Elena Bonetti",
+    "partito": "Azione",
+    "ruolo": "Deputata",
+    "funzione": "Vicepresidente",
+    "orientamento": "centro"
+  },
+  {
+    "nome": "Maria Elena Boschi",
+    "partito": "Italia Viva",
+    "ruolo": "Deputata",
+    "funzione": "Vicepresidente Nazionale",
+    "orientamento": "centro"
+  },
+  {
+    "nome": "Raffaella Paita",
+    "partito": "Italia Viva",
+    "ruolo": "Senatrice",
+    "funzione": "Coordinatrice Nazionale",
+    "orientamento": "centro"
+  },
+  {
+    "nome": "Maurizio Lupi",
+    "partito": "Noi Moderati",
+    "ruolo": "Deputato",
+    "funzione": "Presidente",
+    "orientamento": "centro-destra"
+  },
+  {
+    "nome": "Benedetto Della Vedova",
+    "partito": "+Europa",
+    "ruolo": "Deputato",
+    "funzione": "Dirigente Nazionale",
+    "orientamento": "centro-sinistra"
+  },
+  {
+    "nome": "Ettore Rosato",
+    "partito": "Azione",
+    "ruolo": "Deputato",
+    "funzione": "Vicesegretario",
+    "orientamento": "centro"
+  }
 ]
