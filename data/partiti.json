@@ -106,7 +106,8 @@
     "leader": "Cateno De Luca",
     "partito": "Sud chiama Nord",
     "affiliazione": "Nessuna (Non iscritti)",
-    "descrizione": "Partito regionalista basato in Sicilia con un forte focus sul meridionalismo, sull'autonomia locale e sulla lotta al centralismo statale."
+    "descrizione": "Partito regionalista basato in Sicilia con un forte focus sul meridionalismo, sull'autonomia locale e sulla lotta al centralismo statale.",
+    "logo": "img/partiti/Sud_chiama_Nord.webp"
   },
   {
     "coalizione": "Indipendente",
@@ -114,7 +115,8 @@
     "leader": "Dieter Steger",
     "partito": "Südtiroler Volkspartei",
     "affiliazione": "Partito Popolare Europeo (PPE)",
-    "descrizione": "Partito storico che rappresenta gli interessi delle minoranze linguistiche tedesca e ladina nella provincia autonoma di Bolzano."
+    "descrizione": "Partito storico che rappresenta gli interessi delle minoranze linguistiche tedesca e ladina nella provincia autonoma di Bolzano.",
+    "logo": "img/partiti/Südtiroler_Volkspartei.webp"
   },
   {
     "coalizione": "Indipendente",
@@ -122,6 +124,7 @@
     "leader": "Roberto Vannacci",
     "partito": "Futuro Nazionale",
     "affiliazione": "Nessuna",
-    "descrizione": ""
+    "descrizione": "",
+    "logo": "img/partiti/Futuro-Nazionale.webp"
   }
 ]
