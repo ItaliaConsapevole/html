@@ -76,13 +76,15 @@ Promise.all([
             }
         });
 
+        return window.__PROJECT_TEXTS_PROMISE__ || Promise.resolve();
+    })
+    .then(() => {
         renderPolitici();
         const filterInput = document.getElementById('politici-filter');
         if (filterInput) {
             filterInput.addEventListener('input', () => renderPolitici(filterInput.value));
         }
-    })
-    .catch(err => console.error("Errore:", err));
+    });
 
 function slug(value) {
     return value.toString().toLowerCase().trim()
@@ -98,11 +100,16 @@ function slug(value) {
 
 function updatePoliticiSummary(count, parties, declarations) {
     const summary = document.getElementById('politici-summary');
+    const texts = getPageTexts('politici');
     if (!summary) return;
+    if (!count && !parties && !declarations) {
+        summary.innerHTML = '';
+        return;
+    }
     summary.innerHTML = `
-        <span>${count} politici</span>
-        <span>${parties} partiti</span>
-        <span>${declarations} dichiarazioni</span>
+        <span>${resolveText(texts.summaryCount || '{count} politici', { count })}</span>
+        <span>${resolveText(texts.summaryParties || '{parties} partiti', { parties })}</span>
+        <span>${resolveText(texts.summaryDeclarations || '{declarations} dichiarazioni', { declarations })}</span>
     `;
 }
 
@@ -136,8 +143,10 @@ function renderPolitici(filterValue = '') {
     const uniqueParties = new Set(filteredEntries.map(politico => politico.partito || 'Partito sconosciuto')).size;
     updatePoliticiSummary(filteredEntries.length, uniqueParties, totalDeclarations);
 
+    const texts = getPageTexts('politici');
     if (filteredEntries.length === 0) {
-        document.getElementById('content').innerHTML = '<article class="source-card"><p class="empty-state">Nessun politico trovato per la ricerca.</p></article>';
+        updatePoliticiSummary(0, 0, 0);
+        document.getElementById('content').innerHTML = '';
         return;
     }
 
@@ -161,7 +170,7 @@ function renderPolitici(filterValue = '') {
             const declarationsForPolitico = declarationsByPolitician[politico.nome] || [];
             const declarationItems = declarationsForPolitico.length
                 ? declarationsForPolitico.map(entry => `<li><strong>${entry.data}</strong>: <em>${politico.ruolo} e ${politico.funzione} di ${politico.partito}</em><br>${entry.messaggio}</li>`).join('')
-                : '<li>Nessuna dichiarazione disponibile.</li>';
+                : '';
             const affiliation = getAffiliationForParty(politico.partito || '');
             const coalition = getCoalitionForParty(politico.partito || '');
                 const partyMeta = getPartyMeta(politico.partito || '');
@@ -183,10 +192,7 @@ function renderPolitici(filterValue = '') {
                             </div>
                         </div>
                         <div class="role-function">${politico.ruolo}</div>
-                        <details class="politico-details">
-                            <summary>Dichiarazioni</summary>
-                            <ul>${declarationItems}</ul>
-                        </details>
+                        ${declarationItems ? `<details class="politico-details"><summary>${texts.declarationsLabel || 'Dichiarazioni'}</summary><ul>${declarationItems}</ul></details>` : ''}
                     </article>`;
         });
 

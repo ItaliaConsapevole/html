@@ -14,17 +14,19 @@ function slug(value) {
 }
 
 function updateSummary(count) {
+  const texts = getPageTexts('partitiEuropei');
   if (summary) {
-    summary.textContent = `${count} partiti europei disponibili`;
+    summary.textContent = resolveText(texts.summary || '{count} partiti europei disponibili', { count });
   }
 }
 
 function renderPartitiEuropei(data) {
+  const texts = getPageTexts('partitiEuropei');
   const entries = Array.isArray(data) ? data.slice(1) : [];
   updateSummary(entries.length);
 
   if (!entries.length) {
-    content.innerHTML = '<article class="source-card"><p class="empty-state">Nessun partito europeo disponibile.</p></article>';
+    content.innerHTML = '';
     return;
   }
 
@@ -57,11 +59,8 @@ function renderPartitiEuropei(data) {
             <img class="party-logo" src="${logoSrc}" alt="Logo ${item.partito}" ${logoStyle}>
           </div>
         </div>
-        <p class="descrizione">${item.descrizione || 'Nessuna descrizione disponibile.'}</p>
-        <ul class="metadata">
-          <li><strong>Partiti nazionali:</strong></li>
-          ${partitiNazionaliMarkup || '<li>Nessun partito nazionale indicato</li>'}
-        </ul>
+        ${item.descrizione || texts.descriptionFallback ? `<p class="descrizione">${item.descrizione || texts.descriptionFallback}</p>` : ''}
+        ${partitiNazionaliMarkup ? `<ul class="metadata"><li><strong>${texts.sectionTitle || 'Partiti nazionali:'}</strong></li>${partitiNazionaliMarkup}</ul>` : ''}
       </article>`;
   }).join('');
 
@@ -69,14 +68,22 @@ function renderPartitiEuropei(data) {
 }
 
 function loadData() {
+  const texts = getPageTexts('partitiEuropei');
   fetch('https://raw.githubusercontent.com/ItaliaConsapevole/html/main/data/partiti-europei.json')
-    .then(response => response.ok ? response.json() : Promise.reject(new Error('File non trovato')))
+    .then(response => response.ok ? response.json() : Promise.reject())
+    .then(data => {
+      return window.__PROJECT_TEXTS_PROMISE__ || Promise.resolve().then(() => window.__PROJECT_TEXTS__);
+    })
+    .then(() => {
+      return fetch('https://raw.githubusercontent.com/ItaliaConsapevole/html/main/data/partiti-europei.json')
+        .then(response => response.ok ? response.json() : Promise.reject());
+    })
     .then(renderPartitiEuropei)
     .catch(() => {
-      if (pageTitle) pageTitle.textContent = 'Partiti europei';
-      if (pageDescription) pageDescription.textContent = 'Impossibile caricare il contenuto al momento.';
+      if (pageTitle) pageTitle.textContent = texts.pageTitle || 'Partiti europei';
+      if (pageDescription) pageDescription.textContent = texts.pageDescription || 'Panoramica dei principali partiti e gruppi politici europei.';
       if (content) {
-        content.innerHTML = '<article class="source-card"><p class="empty-state">Impossibile caricare i dati dei partiti europei.</p></article>';
+        content.innerHTML = '';
       }
       updateSummary(0);
     });

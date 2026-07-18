@@ -1,28 +1,22 @@
-//deve recuperare le informazioni da un file JSON esterno e visualizzarle nella pagina, con un fallback in caso di errore
 const PROJECT_JSON_URL = 'https://raw.githubusercontent.com/ItaliaConsapevole/html/main/data/project.json';
-fetch(PROJECT_JSON_URL)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
+loadProjectTexts()
   .then(data => {
-    document.getElementById('project-description').textContent = data.description || DEFAULT_PROJECT_DATA.description;
+    const texts = (data && data.pages && data.pages.progetto) ? data.pages.progetto : {};
+    document.getElementById('project-description').textContent = data.description || texts.pageDescription || '';
     const linksContainer = document.getElementById('project-links');
     linksContainer.innerHTML = '';
     if (data.github) {
       const githubLink = document.createElement('a');
       githubLink.href = data.github;
-      githubLink.textContent = 'GitHub';
+      githubLink.textContent = texts.githubLabel || 'GitHub';
       githubLink.target = '_blank';
       linksContainer.appendChild(githubLink);
     }
-    if (data.wikipedia) {//spazio tra i link
-        linksContainer.appendChild(document.createTextNode(' | '));
+    if (data.wikipedia) {
+      linksContainer.appendChild(document.createTextNode(' | '));
       const wikipediaLink = document.createElement('a');
       wikipediaLink.href = data.wikipedia;
-      wikipediaLink.textContent = 'Wikipedia';
+      wikipediaLink.textContent = texts.wikipediaLabel || 'Wikipedia';
       wikipediaLink.target = '_blank';
       linksContainer.appendChild(wikipediaLink);
     }

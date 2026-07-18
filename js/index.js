@@ -9,9 +9,11 @@ Promise.all([
     .then(([indexData, politiciData]) => {
         index = indexData;
         politici = politiciData;
-        renderIndex();
+        return window.__PROJECT_TEXTS_PROMISE__ || Promise.resolve();
     })
-    .catch(err => console.error("Errore:", err));
+    .then(() => {
+        renderIndex();
+    });
 
 function slug(value) {
     return value.toString().toLowerCase().trim()
@@ -26,11 +28,14 @@ function slug(value) {
 }
 
 function renderIndex() {
+    const pageTexts = getPageTexts('home');
     if (!Array.isArray(index) || index.length <= 1) {
         document.getElementById('content').innerHTML = '';
         return;
     }
     const sorted = index.slice(1).sort((a, b) => new Date(b.data) - new Date(a.data));
+    document.querySelector('h1.page-title').textContent = pageTexts.pageTitle || document.querySelector('h1.page-title').textContent;
+    document.querySelector('p.page-description').textContent = pageTexts.pageDescription || document.querySelector('p.page-description').textContent;
     const mesi = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
     let HTML = '<div class="cards-grid">';
     sorted.forEach(item => {

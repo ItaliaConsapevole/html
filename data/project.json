@@ -1,5 +1,53 @@
 {
   "description": "ItaliaConsapevole è un progetto web pensato per rendere più accessibili le dichiarazioni, i partiti e i politici italiani.",
   "github": "https://github.com/ItaliaConsapevole/html",
-  "wikipedia": "https://it.wikipedia.org/wiki/Italia_Consapevole"
+  "wikipedia": "https://it.wikipedia.org/wiki/Italia_Consapevole",
+  "nav": {
+    "home": "Home",
+    "partiti": "Partiti",
+    "partitiEuropei": "Partiti europei",
+    "politici": "Politici",
+    "progetto": "Il progetto",
+    "theme": "Cambia tema"
+  },
+  "pages": {
+    "home": {
+      "title": "Home - ItaliaCosapevole",
+      "pageTitle": "Dichiarazioni dei politici",
+      "pageDescription": "Qui trovi le dichiarazioni, le date e i nomi dei politici."
+    },
+    "partiti": {
+      "title": "Partiti - ItaliaCosapevole",
+      "pageTitle": "Partiti per coalizione",
+      "pageDescription": "Visualizzazione in due colonne per le coalizioni di destra e sinistra, con i partiti indipendenti mostrati sotto.",
+      "summary": "{count} partiti"
+    },
+    "partitiEuropei": {
+      "title": "Partiti europei - ItaliaCosapevole",
+      "pageTitle": "Partiti europei",
+      "pageDescription": "Panoramica dei principali partiti e gruppi politici europei.",
+      "summary": "{count} partiti europei disponibili",
+      "sectionTitle": "Partiti nazionali:"
+    },
+    "politici": {
+      "title": "Politici - ItaliaCosapevole",
+      "pageTitle": "Politici per partito",
+      "pageDescription": "Ruoli e funzioni dei politici, raggruppati all'interno del proprio partito.",
+      "searchLabel": "Cerca politico, partito o affiliazione",
+      "searchPlaceholder": "Scrivi un nome, partito o affiliazione...",
+      "summaryCount": "{count} politici",
+      "summaryParties": "{parties} partiti",
+      "summaryDeclarations": "{declarations} dichiarazioni",
+      "declarationsLabel": "Dichiarazioni"
+    },
+    "progetto": {
+      "title": "Il progetto - ItaliaCosapevole",
+      "pageTitle": "Il progetto",
+      "pageDescription": "Scopri di più sul progetto ItaliaCosapevole e il suo scopo.",
+      "sectionDescriptionTitle": "Descrizione del progetto",
+      "sectionLinksTitle": "Link utili",
+      "githubLabel": "GitHub",
+      "wikipediaLabel": "Wikipedia"
+    }
+  }
 }
