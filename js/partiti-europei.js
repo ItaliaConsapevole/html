@@ -33,6 +33,8 @@ function renderPartitiEuropei(data) {
     const colorStyle = color ? `style="--party-color:${color};"` : '';
     const logoStyle = color ? `style="border:2px solid ${color};"` : '';
     const logoSrc = item.logo || '';
+    const partitiNazionali = Array.isArray(item.partiti_nazionali) ? item.partiti_nazionali : [];
+    const partitiNazionaliText = partitiNazionali.length ? partitiNazionali.join(', ') : 'Nessun partito nazionale indicato';
     return `
       <article class="source-card party-card" id="${slug(item.partito)}" ${colorStyle}>
         <div class="card-header">
@@ -45,7 +47,7 @@ function renderPartitiEuropei(data) {
           </div>
         </div>
         <p class="descrizione">${item.descrizione || 'Nessuna descrizione disponibile.'}</p>
-        <p class="metadata"><strong>Stato:</strong> ${item.stato || 'Europa'}</p>
+        <p class="metadata"><strong>Partiti nazionali:</strong> ${partitiNazionaliText}</p>
       </article>`;
   }).join('');
 
@@ -53,7 +55,7 @@ function renderPartitiEuropei(data) {
 }
 
 function loadData() {
-  fetch('data/partiti-europei.json')
+  fetch('https://raw.githubusercontent.com/ItaliaConsapevole/html/main/data/partiti-europei.json')
     .then(response => response.ok ? response.json() : Promise.reject(new Error('File non trovato')))
     .then(renderPartitiEuropei)
     .catch(() => {

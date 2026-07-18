@@ -19,11 +19,15 @@ function applyTheme(theme) {
   updateMetaThemeColor();
 }
 
-function highlightHashTarget() {
+function highlightHashTarget(attempt = 0) {
   const currentHash = window.location.hash.substring(1);
   document.querySelectorAll('.highlighted').forEach(el => el.classList.remove('highlighted'));
   if (!currentHash) return;
-  const target = document.getElementById(currentHash);
+  let target = document.getElementById(currentHash);
+  if (!target && attempt < 6) {
+    window.setTimeout(() => highlightHashTarget(attempt + 1), 120);
+    return;
+  }
   if (!target) return;
   const parentDetails = target.closest('details');
   if (parentDetails && !parentDetails.open) {
@@ -56,5 +60,18 @@ window.addEventListener('DOMContentLoaded', () => {
       applyTheme(event.matches ? 'dark' : 'light');
     }
   });
-  window.addEventListener('hashchange', highlightHashTarget);
+  document.addEventListener('click', (event) => {
+    const anchor = event.target.closest('a[href]');
+    if (!anchor) return;
+    const href = anchor.getAttribute('href') || '';
+    if (!href.includes('#')) return;
+    const targetUrl = new URL(href, window.location.href);
+    if (targetUrl.origin !== window.location.origin) return;
+    if (targetUrl.pathname === window.location.pathname) {
+      window.setTimeout(() => highlightHashTarget(), 80);
+    }
+  });
+  window.addEventListener('hashchange', () => highlightHashTarget());
+  window.addEventListener('load', () => highlightHashTarget());
+  highlightHashTarget();
 });
