@@ -19,12 +19,16 @@ function applyTheme(theme) {
   updateMetaThemeColor();
 }
 
+function clearHighlight() {
+  document.querySelectorAll('.highlighted').forEach(el => el.classList.remove('highlighted'));
+}
+
 function highlightHashTarget(attempt = 0) {
   const currentHash = window.location.hash.substring(1);
-  document.querySelectorAll('.highlighted').forEach(el => el.classList.remove('highlighted'));
+  clearHighlight();
   if (!currentHash) return;
   let target = document.getElementById(currentHash);
-  if (!target && attempt < 6) {
+  if (!target && attempt < 8) {
     window.setTimeout(() => highlightHashTarget(attempt + 1), 120);
     return;
   }
@@ -43,10 +47,16 @@ function activateHashNavigation() {
     if (!href.includes('#')) return;
     const targetUrl = new URL(href, window.location.href);
     if (targetUrl.origin !== window.location.origin) return;
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (event) => {
+      const targetHash = targetUrl.hash.substring(1);
+      if (!targetHash) return;
       if (targetUrl.pathname === window.location.pathname) {
+        window.location.hash = targetHash;
+        event.preventDefault();
         window.setTimeout(() => highlightHashTarget(), 80);
+        return;
       }
+      window.location.href = `${targetUrl.pathname}${targetUrl.hash}`;
     });
   });
 }
