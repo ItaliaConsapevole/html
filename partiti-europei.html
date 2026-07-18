@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#f8f9ff">
-    <title>Il progetto - ItaliaCosapevole</title>
+    <title>Partiti europei - ItaliaCosapevole</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,9 +12,9 @@
         <div class="nav-container">
             <a href="index.html">Home</a>
             <a href="partiti.html">Partiti</a>
-            <a href="partiti-europei.html">Partiti europei</a>
+            <a href="partiti-europei.html" class="active">Partiti europei</a>
             <a href="politici.html">Politici</a>
-            <a href="il-progetto.html" class="active">Il progetto</a>
+            <a href="il-progetto.html">Il progetto</a>
             <label class="theme-switcher" title="Cambia tema">
                 <input type="checkbox" id="theme-toggle">
                 <span class="theme-icon theme-icon-light">☀️</span>
@@ -25,22 +25,15 @@
     </nav>
     <main class="page-container">
         <header class="page-header">
-            <h1 class="page-title">Il progetto</h1>
-            <p class="page-description">Scopri di più sul progetto ItaliaCosapevole e il suo scopo.</p>
+            <h1 class="page-title">Partiti europei</h1>
+            <p class="page-description">Panoramica dei principali partiti e gruppi politici europei.</p>
         </header>
-
-        <section class="project-card project-description">
-            <h2>Descrizione del progetto</h2>
-            <p id="project-description">Caricamento in corso...</p>
-        </section>
-
-        <section class="project-card project-links">
-            <h2>Link utili</h2>
-            <div id="project-links">Caricamento link...</div>
-        </section>
+        <div class="page-controls">
+            <div class="page-summary" id="partiti-europei-summary">Caricamento in corso...</div>
+        </div>
+        <div id="content"></div>
     </main>
-
-    <script src="js/progetto.js"></script>
+    <script src="js/partiti-europei.js"></script>
     <script src="js/theme.js"></script>
 </body>
 </html>

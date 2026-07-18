@@ -1,0 +1,75 @@
+[
+  8,
+  {
+    "partito": "Partito Popolare Europeo",
+    "gruppo": "EPP",
+    "stato": "Europa",
+    "orientamento": "Centro-destra / cristiano-democratico",
+    "descrizione": "Il principale gruppo conservatore e cristiano-democratico del Parlamento europeo, forte di una rete di partiti nazionali in tutta Europa.",
+    "logo": "img/partiti/Partito_Popolare_Europeo.svg",
+    "color": "#0071bc"
+  },
+  {
+    "partito": "Partito dei Socialisti Europei",
+    "gruppo": "S&D",
+    "stato": "Europa",
+    "orientamento": "Centro-sinistra / socialdemocratico",
+    "descrizione": "Rappresenta il fronte socialdemocratico europeo e promuove welfare, lavoro e integrazione europea.",
+    "logo": "img/partiti/Partito_Socialisti_Europei.svg",
+    "color": "#e3001b"
+  },
+  {
+    "partito": "Renew Europe",
+    "gruppo": "Renew",
+    "stato": "Europa",
+    "orientamento": "Centro / liberale e riformista",
+    "descrizione": "Gruppo liberale e riformista che sostiene innovazione, mercato aperto e maggiore integrazione europea.",
+    "logo": "img/partiti/Renew_Europe.svg",
+    "color": "#f2b400"
+  },
+  {
+    "partito": "I Verdi/Alleanza Libera Europea",
+    "gruppo": "Greens/EFA",
+    "stato": "Europa",
+    "orientamento": "Progressista / ecologista",
+    "descrizione": "Coalizione ecologista e progressista che punta su transizione verde, diritti civili e giustizia climatica.",
+    "logo": "img/partiti/Verdi_EFA.svg",
+    "color": "#4db848"
+  },
+  {
+    "partito": "La Sinistra Europea",
+    "gruppo": "The Left",
+    "stato": "Europa",
+    "orientamento": "Sinistra / democratico-socialista",
+    "descrizione": "Rete dei partiti della sinistra europea impegnata sui temi del lavoro, della giustizia sociale e della democrazia partecipativa.",
+    "logo": "img/partiti/La_Sinistra_Europea.svg",
+    "color": "#a1006b"
+  },
+  {
+    "partito": "Identità e Democrazia",
+    "gruppo": "ID",
+    "stato": "Europa",
+    "orientamento": "Destra / sovranista",
+    "descrizione": "Famiglia politica euroscettica e sovranista che promuove maggiore autonomia nazionale e controllo dei confini.",
+    "logo": "img/partiti/Identita_e_Democrazia.svg",
+    "color": "#2f4f4f"
+  },
+  {
+    "partito": "Conservatori e Riformisti Europei",
+    "gruppo": "ECR",
+    "stato": "Europa",
+    "orientamento": "Destra / conservatore e riformista",
+    "descrizione": "Coalizione di partiti conservatori e populisti di destra, attiva su temi di sovranità, sicurezza e riforma istituzionale.",
+    "logo": "img/partiti/ECR.svg",
+    "color": "#0f6d9d"
+  },
+  {
+    "partito": "Movimento Politico dei Cittadini Europei",
+    "gruppo": "Non iscritti",
+    "stato": "Europa",
+    "orientamento": "Trasversale / civico",
+    "descrizione": "Iniziativa europea che promuove l’azione civica, la partecipazione democratica e una maggiore prossimità ai cittadini.",
+    "logo": "img/partiti/Cittadini_Europei.svg",
+    "color": "#6b4fbb"
+  }
+]
