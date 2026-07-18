@@ -37,7 +37,7 @@ function renderPartitiEuropei(data) {
     const logoSrc = item.logo || '';
     const partitiNazionali = Array.isArray(item.partiti_nazionali) ? item.partiti_nazionali : [];
     const gruppiPerStato = partitiNazionali.reduce((acc, entry) => {
-      const stato = entry.stato || 'Altro';
+      const stato = entry.stato || texts.defaultState || 'Altro';
       if (!acc[stato]) acc[stato] = [];
       acc[stato].push(entry.partito);
       return acc;
@@ -53,18 +53,21 @@ function renderPartitiEuropei(data) {
         <div class="card-header">
           <div>
             <h2 class="nome"><a class="party-link" href="partiti-europei.html#${slug(item.partito)}">${item.partito}</a></h2>
-            <div class="party-label">${item.gruppo || 'Gruppo europeo'} · ${item.orientamento || 'Orientamento non specificato'}</div>
+            <div class="party-label">${item.gruppo || texts.defaultGroup || 'Gruppo europeo'} · ${item.orientamento || texts.defaultOrientation || 'Orientamento non specificato'}</div>
           </div>
           <div class="badges">
             <img class="party-logo" src="${logoSrc}" alt="Logo ${item.partito}" ${logoStyle}>
           </div>
         </div>
         ${item.descrizione || texts.descriptionFallback ? `<p class="descrizione">${item.descrizione || texts.descriptionFallback}</p>` : ''}
-        ${partitiNazionaliMarkup ? `<ul class="metadata"><li><strong>${texts.sectionTitle || 'Partiti nazionali:'}</strong></li>${partitiNazionaliMarkup}</ul>` : ''}
+        ${partitiNazionaliMarkup ? `<details class="affiliation-details"><summary>${texts.sectionTitle || 'Partiti nazionali'}</summary><ul class="party-affiliation-list">${partitiNazionaliMarkup}</ul></details>` : ''}
       </article>`;
   }).join('');
 
   content.innerHTML = html;
+  if (typeof window.highlightHashTarget === 'function') {
+    window.highlightHashTarget();
+  }
 }
 
 function loadData() {

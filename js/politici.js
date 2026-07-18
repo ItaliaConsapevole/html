@@ -151,7 +151,7 @@ function renderPolitici(filterValue = '') {
     }
 
     const grouped = filteredEntries.reduce((acc, politico) => {
-        const partito = politico.partito || 'Partito sconosciuto';
+        const partito = politico.partito || texts.unknownParty || 'Partito sconosciuto';
         if (!acc[partito]) acc[partito] = [];
         acc[partito].push(politico);
         return acc;
@@ -163,7 +163,7 @@ function renderPolitici(filterValue = '') {
     sortedPartiti.forEach(partito => {
         const members = grouped[partito].sort((a, b) => a.nome.localeCompare(b.nome));
         HTML += `<section class="party-group"><details class="party-box" open>
-                    <summary class="party-summary"><a class="party-link" href="partiti.html#${slug(partito)}">${partito}</a></summary>
+                    <summary class="party-summary"><a class="party-link" href="html/partiti.html#${slug(partito)}">${partito}</a></summary>
                     <div class="party-members">`;
 
         members.forEach(politico => {
@@ -180,15 +180,16 @@ function renderPolitici(filterValue = '') {
                 const photoStyle = partyColor ? `style="border:2px solid ${partyColor};"` : '';
                 const badgeStyle = partyColor ? `style="background:${partyColor}; color:${badgeTextColor};"` : '';
 
+                const showPhoto = Boolean(photoSrc && photoSrc !== defaultPersonPhoto);
+                const personRow = showPhoto
+                    ? `<div class="person-row"><img class="politician-photo" src="${photoSrc}" alt="${politico.nome}" ${photoStyle}><div class="person-info">`
+                    : `<div class="person-row"><div class="person-info">`;
                 HTML += `
                     <article class="source-card" id="${slug(politico.nome)}">
-                        <div class="person-row">
-                            <img class="politician-photo" src="${photoSrc}" alt="${politico.nome}" ${photoStyle}>
-                            <div>
-                                <span class="nome">${politico.nome}</span>
-                                <div class="metadata">
-                                    <span class="badge badge-function" ${badgeStyle}>${politico.funzione}</span>
-                                </div>
+                        ${personRow}
+                            <span class="nome">${politico.nome}</span>
+                            <div class="metadata">
+                                <span class="badge badge-function" ${badgeStyle}>${politico.funzione}</span>
                             </div>
                         </div>
                         <div class="role-function">${politico.ruolo}</div>

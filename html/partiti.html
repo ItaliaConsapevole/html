@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#f8f9ff">
-    <title>Politici - ItaliaCosapevole</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Partiti - ItaliaCosapevole</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <nav>
         <div class="nav-container">
-            <a href="index.html">Home</a>
-            <a href="partiti.html">Partiti</a>
+            <a href="../index.html">Home</a>
+            <a href="partiti.html" class="active">Partiti</a>
             <a href="partiti-europei.html">Partiti europei</a>
-            <a href="politici.html" class="active">Politici</a>
+            <a href="politici.html">Politici</a>
             <a href="il-progetto.html">Il progetto</a>
             <label class="theme-switcher" title="Cambia tema">
                 <input type="checkbox" id="theme-toggle">
@@ -25,20 +25,16 @@
     </nav>
     <main class="page-container">
         <header class="page-header">
-            <h1 class="page-title">Politici per partito</h1>
-            <p class="page-description">Ruoli e funzioni dei politici, raggruppati all'interno del proprio partito.</p>
+            <h1 class="page-title">Partiti per coalizione</h1>
+            <p class="page-description">Visualizzazione in due colonne per le coalizioni di destra e sinistra, con i partiti indipendenti mostrati sotto.</p>
         </header>
         <div class="page-controls">
-            <div class="search-box">
-                <label for="politici-filter">Cerca politico, partito o affiliazione</label>
-                <input id="politici-filter" type="search" placeholder="Scrivi un nome, partito o affiliazione...">
-            </div>
-            <div class="page-summary" id="politici-summary"></div>
+            <div class="page-summary" id="partiti-summary"></div>
         </div>
         <div id="content"></div>
     </main>
-    <script src="js/texts.js"></script>
-    <script src="js/politici.js"></script>
-    <script src="js/theme.js"></script>
+    <script src="../js/texts.js"></script>
+    <script src="../js/partiti.js"></script>
+    <script src="../js/theme.js"></script>
 </body>
 </html>

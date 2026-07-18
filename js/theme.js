@@ -50,9 +50,9 @@ function activateHashNavigation() {
     link.addEventListener('click', (event) => {
       const targetHash = targetUrl.hash.substring(1);
       if (!targetHash) return;
+      event.preventDefault();
       if (targetUrl.pathname === window.location.pathname) {
         window.location.hash = targetHash;
-        event.preventDefault();
         window.setTimeout(() => highlightHashTarget(), 80);
         return;
       }

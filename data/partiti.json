@@ -7,7 +7,7 @@
     "partito": "Fratelli d'Italia",
     "affiliazione": "Conservatori e Riformisti Europei (ECR)",
     "descrizione": "Partito conservatore e nazionalista guidato dalla Premier Giorgia Meloni, attualmente principale forza politica della coalizione di governo.",
-    "logo": "img/partiti/Fratelli_d_Italia.webp",
+    "logo": "../img/partiti/Fratelli_d_Italia.webp",
     "color": "#00205c"
   },
   {
@@ -17,7 +17,7 @@
     "partito": "Lega",
     "affiliazione": "Patrioti per l'Europa (PfE)",
     "descrizione": "Forza politica orientata al federalismo e al populismo di destra, focalizzata sui temi della sicurezza e del controllo dell'immigrazione.",
-    "logo": "img/partiti/Lega.webp",
+    "logo": "../img/partiti/Lega.webp",
     "color": "#00a0de"
   },
   {
@@ -27,7 +27,7 @@
     "partito": "Forza Italia",
     "affiliazione": "Partito Popolare Europeo (PPE)",
     "descrizione": "Partito di centro-destra di matrice liberale ed europeista, fondato da Silvio Berlusconi e oggi guidato da Antonio Tajani.",
-    "logo": "img/partiti/Forza_Italia.webp",
+    "logo": "../img/partiti/Forza_Italia.webp",
     "color": "#00539f"
   },
   {
@@ -37,7 +37,7 @@
     "partito": "Noi Moderati",
     "affiliazione": "Partito Popolare Europeo (PPE)",
     "descrizione": "Lista centrista d'ispirazione cattolico-liberale che raccoglie diverse anime moderate alleate all'interno dello schieramento di centro-destra.",
-    "logo": "img/partiti/Noi_Moderati.webp",
+    "logo": "../img/partiti/Noi_Moderati.webp",
     "color": "#0073c8"
   },
   {
@@ -47,7 +47,7 @@
     "partito": "Partito Democratico",
     "affiliazione": "Socialisti e Democratici (S&D)",
     "descrizione": "Principale partito del centro-sinistra italiano, nato dall'unione di tradizioni socialdemocratiche, cattolico-democratiche ed ecologiste.",
-    "logo": "img/partiti/Partito_Democratico.webp",
+    "logo": "../img/partiti/Partito_Democratico.webp",
     "color": "#00843d"
   },
   {
@@ -57,7 +57,7 @@
     "partito": "Alleanza Verdi e Sinistra",
     "affiliazione": "Verdi/ALE & La Sinistra (The Left)",
     "descrizione": "Alleanza progressista che unisce Sinistra Italiana ed Europa Verde, incentrata sui diritti sociali, l'ambientalismo e la giustizia climatica.",
-    "logo": "img/partiti/Alleanza_Verdi_Sinistra.webp",
+    "logo": "../img/partiti/Alleanza_Verdi_Sinistra.webp",
     "color": "#2d7f2d"
   },
   {
@@ -67,7 +67,7 @@
     "partito": "+Europa",
     "affiliazione": "Renew Europe (ALDE)",
     "descrizione": "Partito politico di orientamento liberale, fortemente europeista e attivo nella promozione dei diritti civili e delle libertà individuali.",
-    "logo": "img/partiti/Piu_Europa.webp",
+    "logo": "../img/partiti/Piu_Europa.webp",
     "color": "#4f2d7f"
   },
   {
@@ -77,7 +77,7 @@
     "partito": "Movimento 5 Stelle",
     "affiliazione": "La Sinistra (The Left)",
     "descrizione": "Nato come movimento anti-establishment basato sulla democrazia diretta, si posiziona oggi come forza progressista incentrata su transizione ecologica e misure sociali.",
-    "logo": "img/partiti/Movimento_5_Stelle.webp",
+    "logo": "../img/partiti/Movimento_5_Stelle.webp",
     "color": "#ffcc00"
   },
   {
@@ -87,7 +87,7 @@
     "partito": "Azione",
     "affiliazione": "Renew Europe (ALDE)",
     "descrizione": "Partito di centro d'impronta riformista e tecnocratica, che promuove il liberalismo sociale, la crescita economica e l'efficienza amministrativa.",
-    "logo": "img/partiti/Azione.webp",
+    "logo": "../img/partiti/Azione.webp",
     "color": "#f7931e"
   },
   {
@@ -97,7 +97,7 @@
     "partito": "Italia Viva",
     "affiliazione": "Renew Europe (PDE)",
     "descrizione": "Formazione centrista e liberale fondata dall'ex Premier Matteo Renzi a seguito della scissione dal PD, focalizzata su riforme istituzionali ed economiche.",
-    "logo": "img/partiti/Italia_Viva.webp",
+    "logo": "../img/partiti/Italia_Viva.webp",
     "color": "#e6007e"
   },
   {
@@ -106,8 +106,8 @@
     "leader": "Cateno De Luca",
     "partito": "Sud chiama Nord",
     "affiliazione": "Nessuna (Non iscritti)",
-    "descrizione": "Partito regionalista basato in Sicilia con un forte focus sul meridionalismo, sull'autonomia locale e sulla lotta al centralismo statale.",
-    "logo": "img/partiti/Sud_chiama_Nord.webp"
+    "descrizione": "Partito regionalista basato in Sicilia con un forte focus sul meridionalismo, sull'autonomia local e sulla lotta al centralismo statale.",
+    "logo": "../img/partiti/Sud_chiama_Nord.webp"
   },
   {
     "coalizione": "Indipendente",
@@ -116,7 +116,7 @@
     "partito": "Südtiroler Volkspartei",
     "affiliazione": "Partito Popolare Europeo (PPE)",
     "descrizione": "Partito storico che rappresenta gli interessi delle minoranze linguistiche tedesca e ladina nella provincia autonoma di Bolzano.",
-    "logo": "img/partiti/Südtiroler_Volkspartei.webp"
+    "logo": "../img/partiti/Südtiroler_Volkspartei.webp"
   },
   {
     "coalizione": "Indipendente",
@@ -124,7 +124,7 @@
     "leader": "Roberto Vannacci",
     "partito": "Futuro Nazionale",
     "affiliazione": "Nessuna",
-    "descrizione": "",
-    "logo": "img/partiti/Futuro-Nazionale.webp"
+    "descrizione": "Partito di destra con un orientamento nazionalista e conservatore, focalizzato su politiche di sicurezza, immigrazione e sovranità nazionale.",
+    "logo": "../img/partiti/Futuro-Nazionale.webp"
   }
 ]

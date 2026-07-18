@@ -36,7 +36,7 @@ function renderIndex() {
     const sorted = index.slice(1).sort((a, b) => new Date(b.data) - new Date(a.data));
     document.querySelector('h1.page-title').textContent = pageTexts.pageTitle || document.querySelector('h1.page-title').textContent;
     document.querySelector('p.page-description').textContent = pageTexts.pageDescription || document.querySelector('p.page-description').textContent;
-    const mesi = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
+    const mesi = Array.isArray(pageTexts.months) ? pageTexts.months : ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
     let HTML = '<div class="cards-grid">';
     sorted.forEach(item => {
         const data = new Date(item.data);
@@ -44,7 +44,7 @@ function renderIndex() {
         const mese = mesi[data.getMonth()];
         const anno = data.getFullYear();
 
-        const politicianLink = `politici.html#${slug(item.nome)}`;
+        const politicianLink = `html/politici.html#${slug(item.nome)}`;
         // find politician info from politici.json (skip first element if present)
         const poliEntries = Array.isArray(politici) ? politici.slice(1) : [];
         const poli = poliEntries.find(p => p.nome === item.nome) || {};
@@ -53,7 +53,7 @@ function renderIndex() {
         const partito = poli.partito || '';
         let roleLine = '';
         if (ruolo || funzione || partito) {
-            const partyLink = partito ? `<a class="party-link" href="partiti.html#${slug(partito)}">${partito}</a>` : '';
+            const partyLink = partito ? `<a class="party-link" href="html/partiti.html#${slug(partito)}">${partito}</a>` : '';
             roleLine = `<div class="role-function">${ruolo}${ruolo && funzione ? ' e ' : ''}${funzione}${(ruolo||funzione) && partyLink ? ' di ' : ''}${partyLink}</div>`;
         }
 

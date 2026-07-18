@@ -270,6 +270,42 @@ nav a.active {
     color: var(--md-sys-color-on-surface-variant);
 }
 
+.party-affiliation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-top: 12px;
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 0.95rem;
+}
+
+.affiliation-label {
+    font-weight: 700;
+    color: var(--md-sys-color-on-surface);
+}
+
+.affiliation-details {
+    margin-top: 12px;
+}
+
+.affiliation-details summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--md-sys-color-primary);
+}
+
+.party-affiliation-list {
+    display: grid;
+    gap: 6px;
+    margin: 10px 0 0 18px;
+    padding: 0;
+}
+
+.party-affiliation-list li {
+    list-style: disc;
+}
+
 .page-container {
     max-width: 1040px;
     margin: 36px auto 48px;

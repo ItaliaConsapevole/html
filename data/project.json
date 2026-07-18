@@ -14,20 +14,33 @@
     "home": {
       "title": "Home - ItaliaCosapevole",
       "pageTitle": "Dichiarazioni dei politici",
-      "pageDescription": "Qui trovi le dichiarazioni, le date e i nomi dei politici."
+      "pageDescription": "Qui trovi le dichiarazioni, le date e i nomi dei politici.",
+      "months": ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"]
     },
     "partiti": {
       "title": "Partiti - ItaliaCosapevole",
       "pageTitle": "Partiti per coalizione",
       "pageDescription": "Visualizzazione in due colonne per le coalizioni di destra e sinistra, con i partiti indipendenti mostrati sotto.",
-      "summary": "{count} partiti"
+      "summary": "{count} partiti",
+      "summaryRight": "Destra: {count}",
+      "summaryLeft": "Sinistra: {count}",
+      "summaryIndependent": "Indipendenti: {count}",
+      "coalitionRight": "Coalizione di destra",
+      "coalitionLeft": "Coalizione di sinistra",
+      "independentLabel": "Indipendenti",
+      "membersLabel": "Membri",
+      "affiliationLabel": "Affiliazione europea:"
     },
     "partitiEuropei": {
       "title": "Partiti europei - ItaliaCosapevole",
       "pageTitle": "Partiti europei",
       "pageDescription": "Panoramica dei principali partiti e gruppi politici europei.",
       "summary": "{count} partiti europei disponibili",
-      "sectionTitle": "Partiti nazionali:"
+      "sectionTitle": "Partiti nazionali",
+      "defaultGroup": "Gruppo europeo",
+      "defaultOrientation": "Orientamento non specificato",
+      "defaultState": "Altro",
+      "descriptionFallback": "Informazioni non disponibili"
     },
     "politici": {
       "title": "Politici - ItaliaCosapevole",
@@ -38,7 +51,8 @@
       "summaryCount": "{count} politici",
       "summaryParties": "{parties} partiti",
       "summaryDeclarations": "{declarations} dichiarazioni",
-      "declarationsLabel": "Dichiarazioni"
+      "declarationsLabel": "Dichiarazioni",
+      "unknownParty": "Partito sconosciuto"
     },
     "progetto": {
       "title": "Il progetto - ItaliaCosapevole",

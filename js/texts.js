@@ -16,7 +16,11 @@ function getCurrentPageKey() {
     'partiti.html': 'partiti',
     'partiti-europei.html': 'partitiEuropei',
     'politici.html': 'politici',
-    'il-progetto.html': 'progetto'
+    'il-progetto.html': 'progetto',
+    'html/partiti.html': 'partiti',
+    'html/partiti-europei.html': 'partitiEuropei',
+    'html/politici.html': 'politici',
+    'html/il-progetto.html': 'progetto'
   };
   return map[pathname] || 'home';
 }
@@ -51,15 +55,15 @@ function applyPageTexts(pageKey = getCurrentPageKey()) {
 
   document.querySelectorAll('nav a[href]').forEach(link => {
     const href = link.getAttribute('href') || '';
-    if (href.endsWith('index.html')) {
+    if (href.endsWith('index.html') || href.endsWith('/index.html')) {
       link.textContent = navTexts.home || 'Home';
-    } else if (href.endsWith('partiti.html')) {
+    } else if (href.endsWith('partiti.html') || href.includes('/partiti.html')) {
       link.textContent = navTexts.partiti || 'Partiti';
-    } else if (href.endsWith('partiti-europei.html')) {
+    } else if (href.endsWith('partiti-europei.html') || href.includes('/partiti-europei.html')) {
       link.textContent = navTexts.partitiEuropei || 'Partiti europei';
-    } else if (href.endsWith('politici.html')) {
+    } else if (href.endsWith('politici.html') || href.includes('/politici.html')) {
       link.textContent = navTexts.politici || 'Politici';
-    } else if (href.endsWith('il-progetto.html')) {
+    } else if (href.endsWith('il-progetto.html') || href.includes('/il-progetto.html')) {
       link.textContent = navTexts.progetto || 'Il progetto';
     }
   });
