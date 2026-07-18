@@ -5,7 +5,7 @@ let partitiEuropei = [];
 function remoteJSON(filename) {
     return fetch(`https://raw.githubusercontent.com/ItaliaConsapevole/html/main/data/${filename}`)
         .then(response => response.ok ? response.json() : Promise.reject())
-        .catch(() => fetch(`data/${filename}`)
+        .catch(() => fetch(`../data/${filename}`) // CORRETTO: Aggiunto '../' per permettere il corretto funzionamento in locale
             .then(response => response.ok ? response.json() : Promise.reject())
             .catch(() => []));
 }
@@ -59,7 +59,6 @@ function updatePartitiSummary(total, destra, sinistra, indipendenti) {
     `;
 }
 
-// Aggiunto il parametro 'texts' per passarlo a renderPartyCard
 function renderCoalitionPanel(title, items, texts) {
     let html = `<section class="coalition-panel"><details class="coalition-box" open><summary class="coalition-summary">${title}</summary>`;
     if (items.length === 0) {
@@ -78,18 +77,28 @@ function renderCoalitionPanel(title, items, texts) {
 function slug(value) {
     return value.toString().toLowerCase().trim()
         .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '') // Corretta la regex per la normalizzazione dei caratteri speciali
+        .replace(/[\u0300-\u036f]/g, '') 
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/^-+|-+$/g, '');
 }
 
-// Aggiunto il parametro 'texts' (con fallback a oggetto vuoto) per evitare il ReferenceError
 function renderPartyCard(item, texts = {}) {
     const id = slug(item.partito);
     const color = item.color || '';
     const colorStyle = color ? `style="--party-color:${color};"` : '';
     const logoStyle = color ? `style="border:2px solid ${color};"` : '';
     const logoSrc = item.logo || '';
+    
+    // RISOLUZIONE ROBUSTA DEL LOGO: Gestisce sia i nomi file singoli che i percorsi strutturati
+    let correctLogoSrc = logoSrc;
+    if (logoSrc && !logoSrc.startsWith('http') && !logoSrc.startsWith('../')) {
+        if (!logoSrc.includes('img/partiti/')) {
+            correctLogoSrc = `../img/partiti/${logoSrc}`;
+        } else {
+            correctLogoSrc = `../${logoSrc}`;
+        }
+    }
+
     const entries = Array.isArray(politici) ? politici.slice(1) : [];
     const members = entries.filter(p => (p.partito || '') === (item.partito || '')).sort((a, b) => {
         const roleA = (a.ruolo || '').toLowerCase();
@@ -104,25 +113,28 @@ function renderPartyCard(item, texts = {}) {
             const roleText = member.ruolo ? `${member.ruolo}` : '';
             const functionText = member.funzione ? `${member.funzione}` : '';
             const roleLine = [roleText, functionText].filter(Boolean).join(' · ');
-            return `<li class="member-row"><a class="party-link" href="html/politici.html#${nomeSlug}">${roleLine ? `<span class="member-role">${roleLine}</span> ` : ''}${member.nome}</a></li>`;
+            // CORRETTO: Rimosso 'html/' perché partiti.html e politici.html condividono la stessa cartella
+            return `<li class="member-row"><a class="party-link" href="politici.html#${nomeSlug}">${roleLine ? `<span class="member-role">${roleLine}</span> ` : ''}${member.nome}</a></li>`;
         }).join('')
         : '';
         
     const descriptionMarkup = item.descrizione ? `<p class="descrizione">${item.descrizione}</p>` : '';
     const europeanParty = getEuropeanPartyForAffiliation(item.affiliazione || '');
     const europeanPartySlug = europeanParty ? slug(europeanParty) : '';
-    const affiliationMarkup = item.affiliazione ? `<div class="party-affiliation"><span class="affiliation-label">${texts.affiliationLabel || 'Affiliazione europea:'}</span> ${europeanPartySlug ? `<a class="party-link" href="html/partiti-europei.html#${europeanPartySlug}">${europeanParty}</a>` : `<span>${item.affiliazione}</span>`}</div>` : '';
+    
+    // CORRETTO: Rimosso 'html/' dal link delle affiliazioni europee
+    const affiliationMarkup = item.affiliazione ? `<div class="party-affiliation"><span class="affiliation-label">${texts.affiliationLabel || 'Affiliazione europea:'}</span> ${europeanPartySlug ? `<a class="party-link" href="partiti-europei.html#${europeanPartySlug}">${europeanParty}</a>` : `<span>${item.affiliazione}</span>`}</div>` : '';
     const membersDetailsMarkup = membersMarkup ? `<details class="party-members-details"><summary>${texts.membersLabel || 'Membri'}</summary><ul class="party-member-list">${membersMarkup}</ul></details>` : '';
     
     return `
         <article class="source-card party-card" id="${id}" ${colorStyle}>
             <div class="card-header">
                 <div>
-                    <h2 class="nome"><a class="party-link" href="html/partiti.html#${id}">${item.partito}</a></h2>
+                    <h2 class="nome"><a class="party-link" href="partiti.html#${id}">${item.partito}</a></h2>
                     <div class="party-label">${item.orientamento || item.coalizione || (texts.defaultPartyLabel || 'Partito')}</div>
                 </div>
                 <div class="badges">
-                      <img class="party-logo" src="${logoSrc}" alt="Logo ${item.partito}" ${logoStyle}>
+                      <img class="party-logo" src="${correctLogoSrc}" alt="Logo ${item.partito}" ${logoStyle}>
                 </div>
             </div>
             ${descriptionMarkup}
@@ -156,7 +168,6 @@ function renderPartiti() {
 
     let HTML = '<div class="coalition-layout">';
 
-    // Passato l'oggetto texts alle funzioni
     HTML += renderCoalitionPanel(texts.coalitionRight || 'Coalizione di destra', destra, texts);
     HTML += renderCoalitionPanel(texts.coalitionLeft || 'Coalizione di sinistra', sinistra, texts);
 
@@ -165,7 +176,6 @@ function renderPartiti() {
     if (indipendenti.length) {
         HTML += '<section class="coalition-panel full-width">';
         HTML += '<details class="coalition-box" open>';
-        // Corretto: inseriti i backtick al posto degli apici singoli
         HTML += `<summary class="coalition-summary">${texts.independentLabel || 'Indipendenti'}</summary>`;
         HTML += '<div class="party-members">';
         indipendenti.sort((a, b) => a.partito.localeCompare(b.partito)).forEach(item => {
@@ -187,9 +197,9 @@ Promise.all([
     remoteJSON("politici.json"),
     remoteJSON("partiti-europei.json")
 ])
-    .then(([partitiData, politiciData, partitiEuropeiData]) => {
+    .then(([partitiData, politiciansData, partitiEuropeiData]) => {
         partiti = partitiData || [];
-        politici = politiciData || [];
+        politici = politiciansData || [];
         partitiEuropei = Array.isArray(partitiEuropeiData) ? partitiEuropeiData.slice(1) : [];
         return window.__PROJECT_TEXTS_PROMISE__ || Promise.resolve();
     })
