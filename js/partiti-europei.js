@@ -34,7 +34,18 @@ function renderPartitiEuropei(data) {
     const logoStyle = color ? `style="border:2px solid ${color};"` : '';
     const logoSrc = item.logo || '';
     const partitiNazionali = Array.isArray(item.partiti_nazionali) ? item.partiti_nazionali : [];
-    const partitiNazionaliText = partitiNazionali.length ? partitiNazionali.join(', ') : 'Nessun partito nazionale indicato';
+    const gruppiPerStato = partitiNazionali.reduce((acc, entry) => {
+      const stato = entry.stato || 'Altro';
+      if (!acc[stato]) acc[stato] = [];
+      acc[stato].push(entry.partito);
+      return acc;
+    }, {});
+    const partitiNazionaliMarkup = Object.entries(gruppiPerStato)
+      .map(([stato, partiti]) => {
+        const links = partiti.map(partito => `<a class="party-link" href="partiti.html#${slug(partito)}">${partito}</a>`).join(', ');
+        return `<li><strong>${stato}:</strong> ${links}</li>`;
+      })
+      .join('');
     return `
       <article class="source-card party-card" id="${slug(item.partito)}" ${colorStyle}>
         <div class="card-header">
@@ -47,7 +58,10 @@ function renderPartitiEuropei(data) {
           </div>
         </div>
         <p class="descrizione">${item.descrizione || 'Nessuna descrizione disponibile.'}</p>
-        <p class="metadata"><strong>Partiti nazionali:</strong> ${partitiNazionaliText}</p>
+        <ul class="metadata">
+          <li><strong>Partiti nazionali:</strong></li>
+          ${partitiNazionaliMarkup || '<li>Nessun partito nazionale indicato</li>'}
+        </ul>
       </article>`;
   }).join('');
 

@@ -3,7 +3,12 @@
   {
     "partito": "Partito Popolare Europeo",
     "gruppo": "EPP",
-    "partiti_nazionali": ["Fratelli d'Italia", "Forza Italia", "Lega", "Noi Moderati"],
+    "partiti_nazionali": [
+      {"stato": "Italia", "partito": "Fratelli d'Italia"},
+      {"stato": "Italia", "partito": "Forza Italia"},
+      {"stato": "Italia", "partito": "Lega"},
+      {"stato": "Italia", "partito": "Noi Moderati"}
+    ],
     "orientamento": "Centro-destra / cristiano-democratico",
     "descrizione": "Il principale gruppo conservatore e cristiano-democratico del Parlamento europeo, forte di una rete di partiti nazionali in tutta Europa.",
     "logo": "img/partiti/Partito_Popolare_Europeo.svg",
@@ -12,7 +17,9 @@
   {
     "partito": "Partito dei Socialisti Europei",
     "gruppo": "S&D",
-    "partiti_nazionali": ["Partito Democratico"],
+    "partiti_nazionali": [
+      {"stato": "Italia", "partito": "Partito Democratico"}
+    ],
     "orientamento": "Centro-sinistra / socialdemocratico",
     "descrizione": "Rappresenta il fronte socialdemocratico europeo e promuove welfare, lavoro e integrazione europea.",
     "logo": "img/partiti/Partito_Socialisti_Europei.svg",
@@ -21,7 +28,11 @@
   {
     "partito": "Renew Europe",
     "gruppo": "Renew",
-    "partiti_nazionali": ["+Europa", "Azione", "Italia Viva"],
+    "partiti_nazionali": [
+      {"stato": "Italia", "partito": "+Europa"},
+      {"stato": "Italia", "partito": "Azione"},
+      {"stato": "Italia", "partito": "Italia Viva"}
+    ],
     "orientamento": "Centro / liberale e riformista",
     "descrizione": "Gruppo liberale e riformista che sostiene innovazione, mercato aperto e maggiore integrazione europea.",
     "logo": "img/partiti/Renew_Europe.svg",
@@ -30,7 +41,9 @@
   {
     "partito": "I Verdi/Alleanza Libera Europea",
     "gruppo": "Greens/EFA",
-    "partiti_nazionali": ["Alleanza Verdi e Sinistra"],
+    "partiti_nazionali": [
+      {"stato": "Italia", "partito": "Alleanza Verdi e Sinistra"}
+    ],
     "orientamento": "Progressista / ecologista",
     "descrizione": "Coalizione ecologista e progressista che punta su transizione verde, diritti civili e giustizia climatica.",
     "logo": "img/partiti/Verdi_EFA.svg",
@@ -39,7 +52,9 @@
   {
     "partito": "La Sinistra Europea",
     "gruppo": "The Left",
-    "partiti_nazionali": ["Alleanza Verdi e Sinistra"],
+    "partiti_nazionali": [
+      {"stato": "Italia", "partito": "Alleanza Verdi e Sinistra"}
+    ],
     "orientamento": "Sinistra / democratico-socialista",
     "descrizione": "Rete dei partiti della sinistra europea impegnata sui temi del lavoro, della giustizia sociale e della democrazia partecipativa.",
     "logo": "img/partiti/La_Sinistra_Europea.svg",
@@ -48,7 +63,10 @@
   {
     "partito": "Identità e Democrazia",
     "gruppo": "ID",
-    "partiti_nazionali": ["Lega", "Fratelli d'Italia"],
+    "partiti_nazionali": [
+      {"stato": "Italia", "partito": "Lega"},
+      {"stato": "Italia", "partito": "Fratelli d'Italia"}
+    ],
     "orientamento": "Destra / sovranista",
     "descrizione": "Famiglia politica euroscettica e sovranista che promuove maggiore autonomia nazionale e controllo dei confini.",
     "logo": "img/partiti/Identita_e_Democrazia.svg",
@@ -57,7 +75,10 @@
   {
     "partito": "Conservatori e Riformisti Europei",
     "gruppo": "ECR",
-    "partiti_nazionali": ["Fratelli d'Italia", "Lega"],
+    "partiti_nazionali": [
+      {"stato": "Italia", "partito": "Fratelli d'Italia"},
+      {"stato": "Italia", "partito": "Lega"}
+    ],
     "orientamento": "Destra / conservatore e riformista",
     "descrizione": "Coalizione di partiti conservatori e populisti di destra, attiva su temi di sovranità, sicurezza e riforma istituzionale.",
     "logo": "img/partiti/ECR.svg",
@@ -66,7 +87,10 @@
   {
     "partito": "Movimento Politico dei Cittadini Europei",
     "gruppo": "Non iscritti",
-    "partiti_nazionali": ["Movimento 5 Stelle", "Azione"],
+    "partiti_nazionali": [
+      {"stato": "Italia", "partito": "Movimento 5 Stelle"},
+      {"stato": "Italia", "partito": "Azione"}
+    ],
     "orientamento": "Trasversale / civico",
     "descrizione": "Iniziativa europea che promuove l’azione civica, la partecipazione democratica e una maggiore prossimità ai cittadini.",
     "logo": "img/partiti/Cittadini_Europei.svg",

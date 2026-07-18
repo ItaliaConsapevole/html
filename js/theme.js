@@ -37,6 +37,20 @@ function highlightHashTarget(attempt = 0) {
   target.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
+function activateHashNavigation() {
+  document.querySelectorAll('a[href]').forEach(link => {
+    const href = link.getAttribute('href') || '';
+    if (!href.includes('#')) return;
+    const targetUrl = new URL(href, window.location.href);
+    if (targetUrl.origin !== window.location.origin) return;
+    link.addEventListener('click', () => {
+      if (targetUrl.pathname === window.location.pathname) {
+        window.setTimeout(() => highlightHashTarget(), 80);
+      }
+    });
+  });
+}
+
 function loadTheme() {
   const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
   const theme = storedTheme || (prefersDark.matches ? 'dark' : 'light');
@@ -60,17 +74,7 @@ window.addEventListener('DOMContentLoaded', () => {
       applyTheme(event.matches ? 'dark' : 'light');
     }
   });
-  document.addEventListener('click', (event) => {
-    const anchor = event.target.closest('a[href]');
-    if (!anchor) return;
-    const href = anchor.getAttribute('href') || '';
-    if (!href.includes('#')) return;
-    const targetUrl = new URL(href, window.location.href);
-    if (targetUrl.origin !== window.location.origin) return;
-    if (targetUrl.pathname === window.location.pathname) {
-      window.setTimeout(() => highlightHashTarget(), 80);
-    }
-  });
+  activateHashNavigation();
   window.addEventListener('hashchange', () => highlightHashTarget());
   window.addEventListener('load', () => highlightHashTarget());
   highlightHashTarget();
