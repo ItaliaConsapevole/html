@@ -48,17 +48,6 @@
     "color": "#4db848"
   },
   {
-    "partito": "La Sinistra Europea",
-    "gruppo": "The Left",
-    "partiti_nazionali": [
-      {"stato": "Italia", "partito": "Alleanza Verdi e Sinistra"}
-    ],
-    "orientamento": "Sinistra / democratico-socialista",
-    "descrizione": "Rete dei partiti della sinistra europea impegnata sui temi del lavoro, della giustizia sociale e della democrazia partecipativa.",
-    "logo": "img/partiti/La_Sinistra_Europea.webp",
-    "color": "#a1006b"
-  },
-  {
     "partito": "Identità e Democrazia",
     "gruppo": "ID",
     "partiti_nazionali": [
@@ -81,14 +70,14 @@
     "color": "#0f6d9d"
   },
   {
-    "partito": "Movimento Politico dei Cittadini Europei",
+    "partito": "La Sinistra",
     "gruppo": "Non iscritti",
     "partiti_nazionali": [
       {"stato": "Italia", "partito": "Movimento 5 Stelle"}
     ],
     "orientamento": "Trasversale / civico",
     "descrizione": "Iniziativa europea che promuove l’azione civica, la partecipazione democratica e una maggiore prossimità ai cittadini.",
-    "logo": "img/partiti/Cittadini_Europei.webp",
+    "logo": "img/partiti/La_Sinistra.webp",
     "color": "#6b4fbb"
   }
 ]
